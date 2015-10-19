@@ -1,0 +1,18 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Speakers
+  </ion-title>
+</ion-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ng-for="#speaker of speakers" (click)="passSpeaker(speaker)">
+    <ion-avatar item-left>
+      <img [src]="speaker.face" alt="">
+    </ion-avatar>
+      {{speaker.name}}
+      <ion-item-options>
+        <button danger (click)="remove(speaker)">Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
